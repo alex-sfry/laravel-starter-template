@@ -18,28 +18,21 @@
                 <ul style="--bs-nav-link-color: var(--bs-light); --bs-nav-link-hover-color: var(--at-orange); --bs-navbar-active-color: var(--at-orange)"
                     class="navbar-nav lsp-125 text-uppercase fw-semibold m-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}"
+                        <a class="nav-link {{ url()->current() === route('home') ? 'active' : '' }}"
                            aria-current="{{ request()->is('/') ? 'page' : 'false' }}"
-                           href="/">
+                           href="{{ route('home') }}">
                             home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light {{ request()->is('/systems') ? 'active' : '' }}"
-                           aria-current="{{ request()->is('/systems') ? 'page' : 'false' }}"
-                           href="/systems">
-                            systems
                         </a>
                     </li>
                 </ul>
                 @guest
                     <div>
-                        <a class="btn btn-primary me-1 {{ request()->is('/auth/signup') ? 'active' : '' }}"
-                           href="/auth/signup">
+                        <a class="btn btn-primary me-1 {{ url()->current() === route('signup_index') ? 'active' : '' }}"
+                           href="{{ route('signup_index') }}">
                             Sign Up
                         </a>
-                        <a class="btn btn-success {{ request()->is('/auth/login') ? 'active' : '' }}"
-                           href="/auth/login">
+                        <a class="btn btn-success {{ url()->current() === route('login_index') ? 'active' : '' }}"
+                           href="{{ route('login_index') }}">
                             Log In
                         </a>
                     </div>
@@ -50,7 +43,7 @@
                            href="#">
                             Profile
                         </a>
-                        <form action="/auth/logout" method="post">
+                        <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <button class="btn btn-secondary" type="submit">Log Out</button>
                         </form>

@@ -4,7 +4,7 @@
     <div class="login-page row px-2 px-sm-0">
         <div class="col-sm-10 col-md-8 col-lg-5 bg-light rounded p-2 m-auto">
             <h1 class="border-bottom border-3">Create Account</h1>
-            <form action="/auth/signup" method="post">
+            <form action="{{ route('signup_store') }}" method="post">
                 @csrf
                 <div class="my-3">
                     <label class="col-form-label" for="username">Username</label>
@@ -60,7 +60,9 @@
                 </div>
                 <div class="d-flex justify-content-between mt-4">
                     <button class="btn btn-primary" type="submit">Submit</button>
-                    <a class="my-auto ms-auto pe-1" href="/auth/login">Already have an account? Log In</a>
+                    <a class="my-auto ms-auto pe-1" href="{{ route('login_index') }}">
+                        Already have an account? Log In
+                    </a>
                 </div>
             </form>
         </div>
