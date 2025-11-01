@@ -1,0 +1,34 @@
+:root {
+    --at-orange: #f14a16;
+    --at-light-orange: #fc9918;
+    --at-bg-header: #370665;
+    --at-bg-main: #35589a;
+}
+
+.bg-header {
+    background-color: var(--at-bg-header) !important;
+}
+
+.bg-main {
+    background-color: var(--at-bg-main) !important;
+}
+
+.bg-light-orange {
+    background-color: var(--at-light-orange) !important;
+}
+
+.text-light-orange {
+    color: var(--at-light-orange) !important;
+}
+
+.lsp-125 {
+    letter-spacing: .125rem !important;
+}
+
+.navbar-brand:hover {
+    opacity: 0.9;
+}
+
+.login-page {
+    padding-top: 120px;
+}
